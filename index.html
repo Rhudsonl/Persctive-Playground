@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persctive Playground</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>Persctive Playground</h2>
+        <main>
+            <section class="settings">
+                <div class="settings-container">
+                    <label> perspective: {{ perspective }}px</label>
+                    <input type="range" min="0" max="999" v-model="perspective">
+
+                    <label>rotateX: {{ rotateX }}deg</label>
+                    <input type="range" min="-180" max="180" v-model="rotateX">
+
+                    <label>rotateY: {{ rotateY }}deg</label>
+                    <input type="range" min="-180" max="180" v-model="rotateY">
+
+                    <label>rotateZ: {{ rotateZ }}deg</label>
+                    <input type="range" min="-180" max="180" v-model="rotateZ">
+
+                    <button type="button" @click.prevent="reset">Reset</button>
+                    <button type="button" @click.prevent="copy">Copy</button>
+
+                </div>
+            </section>
+
+            <section class="output">
+                <div class="box-container">
+                    <div class="box" v-bind:style="box"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/script.js"></script>
+    <script src="https://unpkg.com/css-doodle@0.34.3/css-doodle.min.js"></script>
+
+</body>
+</html>
